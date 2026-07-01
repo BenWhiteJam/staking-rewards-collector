@@ -39,6 +39,7 @@ async function main () {
   let currency = userInput.currency;
   let exportOutput = userInput.exportOutput;
   let subscan_apikey = userInput.subscan_apikey;
+  let cryptocompare_apikey = userInput.cryptocompare_apikey;
   let priceApi = userInput.priceApi;
   const apiSleepDelay = userInput.apiSleepDelay? userInput.apiSleepDelay: API_SLEEP_DELAY;
 
@@ -50,7 +51,7 @@ async function main () {
     let startBalance = userInput.addresses[i].startBalance;
     let ticker = getTicker(network);
 
-    obj = await gatherData(start, end, network, addressName, address, currency, priceData, startBalance, ticker, subscan_apikey, apiSleepDelay, priceApi);
+    obj = await gatherData(start, end, network, addressName, address, currency, priceData, startBalance, ticker, subscan_apikey, cryptocompare_apikey, apiSleepDelay, priceApi);
 
     // otherwise there were no rewards
     if (obj.data.numberRewardsParsed > 0) {
