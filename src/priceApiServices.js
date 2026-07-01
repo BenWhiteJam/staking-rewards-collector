@@ -56,7 +56,10 @@ export const cryptocompareService = {
     const ticker = networkInfo?.ticker || obj.network;
     const numDays = Math.floor((end - start) / (24 * 3600)) + 1;
 
-    const url = `${baseUrl}?fsym=${ticker}&tsym=${obj.currency}&limit=${numDays}&toTs=${end}`;
+    let url = `${baseUrl}?fsym=${ticker}&tsym=${obj.currency}&limit=${numDays}&toTs=${end}`;
+    if (obj.cryptocompare_apikey) {
+      url += `&api_key=${obj.cryptocompare_apikey}`;
+    }
 
     try {
       await sleep(100);

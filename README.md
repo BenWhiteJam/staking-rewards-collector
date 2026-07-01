@@ -1,4 +1,4 @@
-# Staking Rewards Collector v1.8.0
+# Staking Rewards Collector v1.8.1
 
 # Disclaimer
 Everyone using this tool does so at his/her own risk. Neither I nor Web3 Foundation guarantee that any data collected is valid and every user is responsible for double-checking the results of this tool. In addition to potential bugs in this code, you are relying on third-party data: Subscan's API is used to collect staking data and CoinGecko's / Cryptocompare's API is used to collect daily price data.
@@ -6,6 +6,9 @@ Everyone using this tool does so at his/her own risk. Neither I nor Web3 Foundat
 **This is no tax advice**: Every user is responsible to do his/her own research about how stake rewards are taxable in his/her regulatory framework.
 
 # Changelog
+## Version 1.8.1
+* Added support for cryptocompare API keys
+
 ## Version 1.8.0
 * Added support for migrated networks (Kusama & Polkadot), where the endpoint changed from the relay chain to assethub. The code now scrapes both networks if the migration falls into the user's requested time window.
 * Removed faulty header in .csv generation that could lead to problems opening the files.
@@ -56,6 +59,7 @@ Staking Rewards:
 * **start** (YYYY-MM-DD): The earliest day you want to analyze. Note that the earliest available prices: Polkadot (2020-08-19), Kusama (2019-09-20) Moonriver (2021-08-26), Moonbeam (2022-01-11), Shiden (2021-08-30), Astar (2022-01-17), Centrifuge (2022-07-13), KILT (2021-12-01). Prices are set to 0 before that.
 * **end** (YYYY-MM-DD): The most recent day you want to analyze.
 * **subscan_apikey**: You can apply for a developer apikey from [subscan.io](https://support.subscan.io/#introduction) to skip api call rate limit.
+* **cryptocompare_apikey**: You can get a free apikey from [cryptocompare.com](https://min-api.cryptocompare.com/) to increase the rate limits of the CryptoCompare API.
 
 
 Price Data:
